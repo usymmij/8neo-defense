@@ -41,7 +41,15 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void teleopPeriodic() {
-    Base.run(control.getY(Hand.kLeft),control.getY(Hand.kRight));
+    double L = control.getY(Hand.kLeft);
+    double R = control.getY(Hand.kRight) ;
+    if(Math.abs(L) <= 0.2) {
+      L = 0;
+    }
+    if(Math.abs(R) <= 0.2) {
+      R = 0;
+    }
+    Base.run(L,R);
     //System.out.println(control.getY(Hand.kLeft) + " " + control.getY(Hand.kRight));
   }
 
@@ -51,6 +59,6 @@ public class Robot extends IterativeRobot {
   */
 
   @Override
-  public void testPeriodic() {
+ public void testPeriodic() {
   }
 }

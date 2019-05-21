@@ -27,8 +27,8 @@ public class Base {
     }
     
     public static void run(double lPower, double rPower) {
-            LDrive[0].set(lPower);
-            RDrive[0].set(-rPower);
+            LDrive[0].set((lPower/Math.abs(lPower))*Math.sqrt(Math.abs(lPower)*0.5));
+            RDrive[0].set(-(rPower/Math.abs(rPower))*Math.sqrt(Math.abs(rPower))*0.5);
             //LDrive[0].set(0);
             //RDrive[0].set(0);
     }
