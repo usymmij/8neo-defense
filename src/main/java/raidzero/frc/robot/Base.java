@@ -8,7 +8,7 @@ public class Base {
     private static CANSparkMax LDrive[] = new CANSparkMax[4];
     private static CANSparkMax RDrive[] = new CANSparkMax[4];
     private static final boolean REVERSED_GEARBOX = false;
-
+    // there was a weird rev update where CAN ID may not be 0
     public static void init() {
             LDrive[0] = new CANSparkMax(8, MotorType.kBrushless);
             LDrive[1] = new CANSparkMax(1 , MotorType.kBrushless);
